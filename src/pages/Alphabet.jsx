@@ -1,39 +1,39 @@
 import { useState } from "react";
 
 const letters = [
-  { char: "ⴰ", name: "A", sound: 'a (comme "papa")', example: "Aman (eau)" },
-  { char: "ⴱ", name: "B", sound: "b", example: "Abrid (chemin)" },
-  { char: "ⴳ", name: "G", sound: "g", example: "Agur (lune)" },
-  { char: "ⴷ", name: "D", sound: "d", example: "Adrar (montagne)" },
-  { char: "ⴹ", name: "Dh", sound: "d emphatique", example: "Adhrar" },
-  { char: "ⴻ", name: "E", sound: "e muet", example: "Tert" },
-  { char: "ⴼ", name: "F", sound: "f", example: "Afus (main)" },
-  { char: "ⴽ", name: "K", sound: "k", example: "Akli" },
-  { char: "ⵀ", name: "H", sound: "h", example: "Ahal (soirée)" },
-  { char: "ⵃ", name: "Hh", sound: "h emphatique", example: "Ahrar" },
-  { char: "ⵄ", name: "Ayn", sound: "ʕ (gorge)", example: "Aεrur (dos)" },
-  { char: "ⵅ", name: "Kh", sound: "kh", example: "Axam (tente)" },
-  { char: "ⵇ", name: "Q", sound: "q", example: "Aqerru (tête)" },
-  { char: "ⵉ", name: "I", sound: "i", example: "Itri (étoile)" },
-  { char: "ⵊ", name: "J", sound: "j", example: "Ajdir" },
-  { char: "ⵍ", name: "L", sound: "l", example: "Alem (encre)" },
-  { char: "ⵎ", name: "M", sound: "m", example: "Amghar (chef)" },
-  { char: "ⵏ", name: "N", sound: "n", example: "Annar (cour)" },
-  { char: "ⵓ", name: "U", sound: "ou", example: "Ul (coeur)" },
-  { char: "ⵔ", name: "R", sound: "r", example: "Argan" },
-  { char: "ⵕ", name: "Rr", sound: "r emphatique", example: "Arrif" },
-  { char: "ⵙ", name: "S", sound: "s", example: "Asif (rivière)" },
-  { char: "ⵚ", name: "Ss", sound: "s emphatique", example: "Asaru" },
-  { char: "ⵛ", name: "Ch", sound: "ch", example: "Achur (couscous)" },
-  { char: "ⵜ", name: "T", sound: "t", example: "Tafukt (soleil)" },
-  { char: "ⵟ", name: "Tt", sound: "t emphatique", example: "Ttawel" },
-  { char: "ⵡ", name: "W", sound: "w", example: "Aman" },
-  { char: "ⵢ", name: "Y", sound: "y", example: "Yiwen (un)" },
-  { char: "ⵣ", name: "Z", sound: "z", example: "Azul (bonjour)" },
-  { char: "ⵥ", name: "Zz", sound: "z emphatique", example: "Azzar (cheveux)" },
-  { char: "ⵖ", name: "Gh", sound: "gh (comme r français)", example: "Aghrif" },
-  { char: "ⵗ", name: "Ghh", sound: "gh emphatique", example: "Aghrram" },
-  { char: "ⵠ", name: "V", sound: "v", example: "Variante" },
+  { char: "ⴰ", name: "a", sound: 'a (comme "papa")', example: "Aman (eau)" },
+  { char: "ⴱ", name: "b", sound: "b", example: "Abrid (chemin)" },
+  { char: "ⴳ", name: "g", sound: "g", example: "Agur (lune)" },
+  { char: "ⴷ", name: "d", sound: "d", example: "Adrar (montagne)" },
+  { char: "ⴹ", name: "ḍ", sound: "d emphatique", example: "Adhrar" },
+  { char: "ⴻ", name: "e", sound: "e muet", example: "Tert" },
+  { char: "ⴼ", name: "f", sound: "f", example: "Afus (main)" },
+  { char: "ⴽ", name: "k", sound: "k", example: "Akli" },
+  { char: "ⵀ", name: "h", sound: "h", example: "Ahal (soirée)" },
+  { char: "ⵃ", name: "ḥ", sound: "h emphatique", example: "Ahrar" },
+  { char: "ⵄ", name: "ɛ", sound: "ʕ (gorge)", example: "Aεrur (dos)" },
+  { char: "ⵅ", name: "x/kh", sound: "kh", example: "Axam (tente)" },
+  { char: "ⵇ", name: "q", sound: "q", example: "Aqerru (tête)" },
+  { char: "ⵉ", name: "i", sound: "i", example: "Itri (étoile)" },
+  { char: "ⵊ", name: "j", sound: "j", example: "Ajdir" },
+  { char: "ⵍ", name: "l", sound: "l", example: "Alem (encre)" },
+  { char: "ⵎ", name: "m", sound: "m", example: "Amghar (chef)" },
+  { char: "ⵏ", name: "n", sound: "n", example: "Annar (cour)" },
+  { char: "ⵓ", name: "u", sound: "ou", example: "Ul (coeur)" },
+  { char: "ⵔ", name: "r", sound: "r", example: "Argan" },
+  { char: "ⵕ", name: "ṛ", sound: "r emphatique", example: "Arrif" },
+  { char: "ⵙ", name: "s", sound: "s", example: "Asif (rivière)" },
+  { char: "ⵚ", name: "ṣ", sound: "s emphatique", example: "Asaru" },
+  { char: "ⵛ", name: "c/ch", sound: "ch", example: "Achur (couscous)" },
+  { char: "ⵜ", name: "t", sound: "t", example: "Tafukt (soleil)" },
+  { char: "ⵟ", name: "ṭ", sound: "t emphatique", example: "Ttawel" },
+  { char: "ⵡ", name: "w", sound: "w", example: "Aman" },
+  { char: "ⵢ", name: "y", sound: "y", example: "Yiwen (un)" },
+  { char: "ⵣ", name: "z", sound: "z", example: "Azul (bonjour)" },
+  { char: "ⵥ", name: "ẕ", sound: "z emphatique", example: "Azzar (cheveux)" },
+  { char: "ⵖ", name: "gh", sound: "gh (comme r français)", example: "Aghrif" },
+  { char: "ⵇ", name: "x/kh", sound: "kh emphatique", example: "Aghrram" },
+  { char: "ⵇ", name: "q", sound: "q", example: "Variante" },
 ];
 
 export default function Alphabet() {
@@ -56,29 +56,36 @@ export default function Alphabet() {
       </p>
 
       <div className="grid grid-cols-2 gap-6">
+        {/* Grille des lettres - style cartes */}
         <div>
           <h2 className="text-sm font-semibold text-gray-500 mb-3">Les lettres</h2>
-          <div className="grid grid-cols-5 gap-2">
-            {letters.map((l) => (
+          <div className="grid grid-cols-5 gap-3">
+            {letters.map((l, i) => (
               <button
-                key={l.char}
+                key={i}
                 onClick={() => setSelected(l)}
-                className={`w-12 h-12 rounded-xl text-xl font-bold border-2 transition
-                  ${selected.char === l.char
-                    ? "bg-primary text-white border-primary"
-                    : "bg-white border-primary text-primary hover:bg-green-50"
+                className={`flex flex-col items-center justify-center gap-1 rounded-2xl py-4 transition shadow-sm
+                  ${selected.char === l.char && selected === letters[i]
+                    ? "bg-primary text-white shadow-md scale-105"
+                    : "bg-white text-gray-700 hover:shadow-md hover:-translate-y-0.5"
                   }`}
               >
-                {l.char}
+                <span className="text-2xl" style={{ fontFamily: "'Noto Sans Tifinagh', sans-serif" }}>
+                  {l.char}
+                </span>
+                <span className={`text-xs ${selected === letters[i] ? "text-white" : "text-gray-400"}`}>
+                  {l.name}
+                </span>
               </button>
             ))}
           </div>
         </div>
 
+        {/* Détails */}
         <div>
           <h2 className="text-sm font-semibold text-gray-500 mb-3">Détails</h2>
           <div className="border-2 border-primary rounded-xl p-5 bg-white">
-            <div className="text-center text-5xl mb-3 text-primary font-bold">
+            <div className="text-center text-5xl mb-3 text-primary font-bold" style={{ fontFamily: "'Noto Sans Tifinagh', sans-serif" }}>
               {selected.char}
             </div>
             <p className="text-center text-primary font-semibold mb-4">
